@@ -1,4 +1,10 @@
 package com.sahan.backend.Entity.ProjectRelated;
 
-public class MicroTask {
+import java.util.Date;
+
+public class MicroTask
+{
+    private long ID;
+    private String Name;
+    private Date Deadline;
 }

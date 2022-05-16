@@ -1,4 +1,10 @@
 package com.sahan.backend.Entity.ProjectRelated;
 
-public class Project {
+import java.util.Date;
+
+public class Project
+{
+    private long ID;
+    private String Name;
+    private Date Deadline;
 }
