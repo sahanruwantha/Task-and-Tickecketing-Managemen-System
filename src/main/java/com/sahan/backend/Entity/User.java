@@ -1,6 +1,5 @@
 package com.sahan.backend.Entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sahan.backend.Entity.ProjectRelated.MicroTask;
 import com.sahan.backend.Entity.ProjectRelated.Project;
 import com.sahan.backend.Entity.ProjectRelated.Task;
