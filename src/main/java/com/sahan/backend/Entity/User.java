@@ -15,7 +15,10 @@ public class User
 {
 
     @Id
-    private Long ID;
+    @GeneratedValue(
+            strategy = GenerationType.AUTO
+    )
+    private Long userID;
     private String Name;
     private String Occupation;
     private String ResponsibilityInTheGroup;
@@ -23,31 +26,19 @@ public class User
     private boolean canAssignTasksToOthers;
 
     @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
+            cascade = CascadeType.ALL,
             mappedBy = "assignedEngineersForTheTicket")
     private Set<Ticket> ticketsGotAssigned = new HashSet<Ticket>();
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
+    @ManyToMany(
+            cascade = CascadeType.ALL,
             mappedBy = "assignedEngineersForTheProject")
     private Set<Project> projectsGotAssigned = new HashSet<Project>();
     @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
+            cascade = CascadeType.ALL,
             mappedBy = "assignedEngineersForTheTask")
     private Set<Task> tasksGotAssigned = new HashSet<Task>();
     @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
+            cascade = CascadeType.ALL,
             mappedBy = "assignedEngineersForTheMicroTask")
     private Set<MicroTask> microTasksGotAssigned = new HashSet<MicroTask>();
 }

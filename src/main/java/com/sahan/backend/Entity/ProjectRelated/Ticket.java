@@ -21,9 +21,9 @@ public class Ticket
     @ManyToMany
     @JoinTable(name = "user_ticket",
             joinColumns =  @JoinColumn(
-                    name = "User"),
+                    name = "ticketID"),
             inverseJoinColumns = @JoinColumn(
-                    name = "")
+                    name = "userID")
     )
     private Set<User> assignedEngineersForTheTicket = new HashSet<User>();
 
