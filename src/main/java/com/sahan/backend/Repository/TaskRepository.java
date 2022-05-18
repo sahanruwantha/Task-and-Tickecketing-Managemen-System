@@ -1,7 +1,7 @@
 package com.sahan.backend.Repository;
 
-import com.sahan.backend.Entity.ProjectRelated.Ticket;
+import com.sahan.backend.Entity.ProjectRelated.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TaskRepository extends JpaRepository<Ticket, Long> {
+public interface TaskRepository extends JpaRepository<Task, Long> {
 }

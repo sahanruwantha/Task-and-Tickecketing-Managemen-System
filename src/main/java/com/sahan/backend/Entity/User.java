@@ -24,7 +24,7 @@ public class User
     private boolean canCreateProject;
     private boolean canAssignTasksToOthers;
 
-    @ManyToMany(fetch = FetchType.LAZY,
+    @ManyToMany(
             cascade = CascadeType.ALL,
             mappedBy = "assignedEngineersForTheTicket")
     private Set<Ticket> ticketsGotAssigned = new HashSet<Ticket>();
