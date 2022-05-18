@@ -1,6 +1,5 @@
 package com.sahan.backend.Entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sahan.backend.Entity.ProjectRelated.MicroTask;
 import com.sahan.backend.Entity.ProjectRelated.Project;
 import com.sahan.backend.Entity.ProjectRelated.Task;
@@ -25,7 +24,7 @@ public class User
     private boolean canCreateProject;
     private boolean canAssignTasksToOthers;
 
-    @ManyToMany(fetch = FetchType.LAZY,
+    @ManyToMany(
             cascade = CascadeType.ALL,
             mappedBy = "assignedEngineersForTheTicket")
     private Set<Ticket> ticketsGotAssigned = new HashSet<Ticket>();
