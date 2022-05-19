@@ -1,11 +1,11 @@
-package com.sahan.backend.Utils.IDGerationStrategies;
-
-import org.hibernate.id.enhanced.SequenceStyleGenerator;
-
-public class UserIDGenarationStrategy extends SequenceStyleGenerator
-{
-
-}
+//package com.sahan.backend.Utils.IDGerationStrategies;
+//
+//import org.hibernate.id.enhanced.SequenceStyleGenerator;
+//
+//public class UserIDGenarationStrategy extends SequenceStyleGenerator
+//{
+//
+//}
 
 //public class StringPrefixedSequenceIdGenerator extends SequenceStyleGenerator {
 //
