@@ -31,8 +31,6 @@ public class Project
 
     private Set<User> assignedEngineersForTheProject;
 
-    @OneToMany(mappedBy = "relavantProject")
-    private Set<MicroTask> microTasks;
     public void assignEngineer(List<User> user)
     {
         if (assignedEngineersForTheProject == null)
