@@ -25,8 +25,8 @@ public class MicroTask
     private Long microTaskID;
 
     @ManyToOne
-    @JoinColumn(name = "projectID")
-    private Project relavantProject;
+    @JoinColumn(name = "taskID")
+    private Task relavantTask;
     private String Name;
     //private Date Deadline;
     @ManyToMany

@@ -10,6 +10,7 @@ import org.hibernate.annotations.Proxy;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Builder
@@ -22,7 +23,7 @@ public class Task
     @Id
     private long taskID;
     private String Name;
-    private Date Deadline;
+    //private Date Deadline;
     @ManyToMany
     @JoinTable(name = "user_task",
             joinColumns =  @JoinColumn(
@@ -31,4 +32,9 @@ public class Task
                     name = "userID")
     )
     private List<User> assignedEngineersForTheTask;
+
+    @OneToMany(mappedBy = "relavantTask")
+    private Set<MicroTask> microTasks;
+
+
 }

@@ -2,9 +2,11 @@ package com.sahan.backend.Service;
 
 import com.sahan.backend.Entity.ProjectRelated.MicroTask;
 import com.sahan.backend.Entity.ProjectRelated.Project;
+import com.sahan.backend.Entity.ProjectRelated.Task;
 import com.sahan.backend.Entity.User;
 import com.sahan.backend.Repository.MicroTaskRepository;
 import com.sahan.backend.Repository.ProjectRepository;
+import com.sahan.backend.Repository.TaskRepository;
 import com.sahan.backend.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +21,7 @@ public class MicroTaskService
     private MicroTaskRepository microTaskRepository;
 
     @Autowired
-    private ProjectRepository projectRepository;
+    private TaskRepository taskRepository;
 
     @Autowired
     private UserRepository userRepository;
@@ -29,14 +31,14 @@ public class MicroTaskService
         return microTaskRepository.save(microTask);
     }
 
-    public MicroTask createMicroTask(String name, Long projectID, Set<Long> userIDs)
+    public MicroTask createMicroTask(String name, Long taskID, Set<Long> userIDs)
     {
-        Project project = projectRepository.findById(projectID).orElse(null);
+        Task task = taskRepository.findById(taskID).orElse(null);
         List<User> engineersToBeAssigned = userRepository.findAllById(userIDs);
 
         MicroTask microTask = MicroTask.builder()
                 .Name(name)
-                .relavantProject(project)
+                .relavantTask(task)
                 .assignedEngineersForTheMicroTask(engineersToBeAssigned)
                 .build();
 

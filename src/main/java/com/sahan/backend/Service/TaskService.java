@@ -5,13 +5,15 @@ import com.sahan.backend.Repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Set;
+
 @Service
 public class TaskService
 {
     @Autowired
     private TaskRepository taskRepository;
 
-    public Task createNewTask(String name)
+    public Task createNewTask(String name, Long taskID, Set<Long> userIDs)
     {
         return taskRepository.save(task);
     }
