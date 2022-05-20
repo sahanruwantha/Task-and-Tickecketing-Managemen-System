@@ -11,9 +11,8 @@ public class TaskService
     @Autowired
     private TaskRepository taskRepository;
 
-    public Task saveTask(Task task)
+    public Task ceateNewTask(Task task)
     {
         return taskRepository.save(task);
-        taskRepository.
     }
 }
