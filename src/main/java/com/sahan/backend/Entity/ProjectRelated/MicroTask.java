@@ -28,7 +28,7 @@ public class MicroTask
     @JoinColumn(name = "projectID")
     private Project relavantProject;
     private String Name;
-    private Date Deadline;
+    //private Date Deadline;
     @ManyToMany
     @JoinTable(name = "user_microTask",
             joinColumns =  @JoinColumn(
