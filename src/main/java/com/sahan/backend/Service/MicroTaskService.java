@@ -29,7 +29,7 @@ public class MicroTaskService
         return microTaskRepository.save(microTask);
     }
 
-    public void createMicroTask(String name, Long projectID, Set<Long> userIDs)
+    public MicroTask createMicroTask(String name, Long projectID, Set<Long> userIDs)
     {
         Project project = projectRepository.findById(projectID).orElse(null);
         List<User> engineersToBeAssigned = userRepository.findAllById(userIDs);
@@ -39,6 +39,8 @@ public class MicroTaskService
                 .relavantProject(project)
                 .assignedEngineersForTheMicroTask(engineersToBeAssigned)
                 .build();
+
+        return microTaskRepository.save(microTask);
     }
 
     public MicroTask getMicroTask(Long Id)

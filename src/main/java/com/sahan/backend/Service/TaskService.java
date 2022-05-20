@@ -11,7 +11,7 @@ public class TaskService
     @Autowired
     private TaskRepository taskRepository;
 
-    public Task ceateNewTask(Task task)
+    public Task createNewTask(String name)
     {
         return taskRepository.save(task);
     }
